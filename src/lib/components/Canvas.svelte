@@ -12,19 +12,11 @@
 		let parent: HTMLElement = document.getElementById('canvas-container') as HTMLElement;
 		let scene = new PIXI.Application({
 			view: canvas,
-			resizeTo: parent
+			resizeTo: parent,
+			backgroundAlpha: 0
 		});
 
-		Initialize(150, canvas.width, canvas.height, scene);
-		/*
-		sprite = PIXI.Sprite.from('/sprites/boid.png');
-		sprite.anchor.set(0.5, 1);
-		sprite.x = scene.screen.width / 2;
-		sprite.y = scene.screen.height / 2;
-		sprite.scale.x = 0.075;
-		sprite.scale.y = 0.075;
-		scene.stage.addChild(sprite);
-        */
+		Initialize(150, canvas, scene);
 		scene.ticker.add((delta) => {
 			UpdateBoids(delta);
 		});
