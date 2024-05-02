@@ -15,8 +15,8 @@ const maxSpeed = writable(6);
 const containForce = 0.25;
 const centerForce = 0.000025;
 const alignForce = writable(0.1);
-const cohesionForce = 0.02;
-const seperationForce = 0.04;
+const cohesionForce = writable(0.02);
+const seperationForce = writable(0.04);
 const size = 0.05;
 const containPadding = 40;
 
@@ -170,7 +170,7 @@ class Boid {
 			dir = dir.Div(localBoids);
 			dir = dir.Normalize().Mult(get(maxSpeed));
 			dir = dir.Sub(this.velocity);
-			dir = dir.Normalize().Mult(seperationForce);
+			dir = dir.Normalize().Mult(get(seperationForce));
 		}
 		return dir;
 	}
@@ -190,10 +190,10 @@ class Boid {
 			dir = dir.Sub(this.position);
 			dir = dir.Normalize().Mult(get(maxSpeed));
 			dir = dir.Sub(this.velocity);
-			dir = dir.Normalize().Mult(cohesionForce);
+			dir = dir.Normalize().Mult(get(cohesionForce));
 		}
 		return dir;
 	}
 }
 
-export { Initialize, UpdateBoids, maxSpeed, alignForce };
+export { Initialize, UpdateBoids, maxSpeed, alignForce, seperationForce, cohesionForce };
