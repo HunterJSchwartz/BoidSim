@@ -1,6 +1,6 @@
 # Boid Simulation
 
-This project is a simulation of boids and their movement. The movement of the boids is constrained by seperation, alignment, and cohension. These variables that may be adjusted via the sliders which will impact the simulation.
+This project is a simulation of boids and their movement. The movement of the boids is constrained by seperation, alignment, and cohension. These variables that may be adjusted via the sliders which will impact the simulation and update live.
 
 ## Inspiration
 
